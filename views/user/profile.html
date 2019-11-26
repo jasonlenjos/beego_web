@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        User Profile
+    </title>
+</head>
+<body>
+    <div>
+        {{.}}
+        <form>
+            <table>
+                <tr>UserID:</tr>
+                <tr><input name="userid" value="{{.userid}}"></tr>
+            </table>
+            <table>
+                <tr>Tag:</tr>
+                <tr><input name="tag" value="{{.tag}}"></tr>
+            </table>
+            <table>
+                <tr>Email:</tr>
+                <tr><input name="email" value="123@q.com"></tr>
+            </table>
+            <table>
+                <tr>Hobby:</tr>
+                <tr><input name="hobby" value="{{range $index, $value := .hobby}}{{if $index}},{{end}} {{.}}{{end}}"></tr>
+            </table>
+        </form>
+        {{template "footer.html"}}
+    </div>
+</body>
+</html>
